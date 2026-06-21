@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <meta name="description" content="Formulario de contacto para consultas y sugerencias.">
+</head>
+<body>
+
+    
+    <header>
+        <img src="https://www.indexcol.com/wp-content/uploads/2019/03/30th-anniversary-of-the-world-wide-web-4871946884874240.5-law.gif" alt="Doodle conmemorativo por el 30 aniversario de la creación de la World Wide Web">
+         <nav>
+         
+        </nav>
+    </header>
+
+  
+    <main>
+        <h1>Formulario de Contacto</h1> 
+
+  
+
+    <form action="/enviar" method="POST"> 
+
+       
+
+      <fieldset> 
+
+        <legend>Datos Personales</legend> 
+
+  
+
+        <p class="bloque-campo"> 
+
+          <label for="nombre">Nombre <span class="asterisco" aria-hidden="true">*</span></label> 
+
+          <input type="text" id="nombre" name="nombre" required aria-required="true" aria-describedby="error-nombre" placeholder="Ej: Juan">
+          
+          <span id="error-nombre" class="error-message">Este campo es obligatorio.</span> 
+
+        </p> 
+
+  
+
+        <p class="bloque-campo"> 
+
+          <label for="correo">Email <span class="asterisco" aria-hidden="true">*</span></label> 
+
+          <input type="email" id="correo" name="correo" required aria-required="true"  
+
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  
+
+                 placeholder="juan@email.com" 
+
+                 aria-describedby="error-correo"> 
+
+          <span id="error-correo" class="error-message">Falta el @ o un dominio válido.</span> 
+
+        </p> 
+
+  
+
+        <p class="bloque-campo"> 
+
+          <label for="tel">Teléfono</label> 
+
+          <input type="tel" id="tel" name="tel"  
+
+                 pattern="[0-9]{3}-[0-9]{6}"  
+
+                 placeholder="Ej: 221-123456"  
+
+                 aria-describedby="error-tel"> 
+
+          <span id="error-tel" class="error-message">Usa este formato: 123-123456</span> 
+
+        </p> 
+
+      </fieldset> 
+
+  
+
+      <fieldset> 
+
+        <legend>Tu Consulta</legend> 
+
+  
+
+        <p class="bloque-campo"> 
+
+          <label for="motivo">Motivo de contacto</label> 
+
+          <select id="motivo" name="motivo"> 
+
+            <option value="duda">Tengo una duda</option> 
+
+            <option value="reclamo">Hacer un reclamo</option> 
+
+          </select> 
+
+        </p> 
+
+  
+
+        <p class="bloque-campo"> 
+
+          <label for="provincia">Provincia</label> 
+
+          <input list="lista-provincias" id="provincia" name="provincia" placeholder="Escribe o elige..."> 
+
+          <datalist id="lista-provincias"> 
+
+            <option value="Buenos Aires"></option> 
+
+            <option value="Córdoba"></option> 
+
+            <option value="Mendoza"></option> 
+
+          </datalist> 
+
+        </p> 
+
+        
+        
+        <p class="bloque-campo"> 
+            <label>¿Eres cliente actual?</label><br>
+  
+            <input type="radio" id="cliente-si" name="es_cliente" value="si" required aria-required="true"> 
+            <label for="cliente-si" class="etiqueta-en-linea">Sí</label> 
+  
+            <input type="radio" id="cliente-no" name="es_cliente" value="no"> 
+            <label for="cliente-no" class="etiqueta-en-linea">No</label> 
+        </p>
+  
+
+        <p class="bloque-campo"> 
+
+          <label for="mensaje">Mensaje <span class="asterisco" aria-hidden="true">*</span></label> 
+
+          <textarea id="mensaje" name="mensaje" rows="4" required aria-required="true" placeholder="Escribe tu consulta..." aria-describedby="error-mensaje"></textarea> 
+<span id="error-mensaje" class="error-message">Este campo es obligatorio.</span>
+        </p> 
+
+  
+
+
+      </fieldset> 
+
+  
+
+      <fieldset> 
+
+        <legend>Fin</legend> 
+
+        <p class="bloque-campo"> 
+
+          <input type="checkbox" id="acepto" name="acepto" required aria-required="true"> 
+
+          <label for="acepto" class="etiqueta-en-linea">Acepto los términos <span class="asterisco" aria-hidden="true">*</span></label> 
+
+        </p> 
+
+      </fieldset> 
+
+  
+
+      <p class="bloque-campo"> 
+
+        <button type="submit">Enviar Formulario</button> 
+
+        <button type="button" disabled>Cancelar (Inactivo)</button> 
+
+      </p> 
+
+  
+
+    </form> 
+        
+    </main>
+
+   
+    <footer id="fuentes">
+        <p>© 2026 - Trabajo Práctico por Steccanella Julian. Todos los derechos reservados.</p>
+        
+    </footer>
+
+    
+    <!--La diferencia entre aria-required y required es: [El required bloquea al navegador cuando un campo está vacío porque,
+        en el momento exacto en que haces clic en "Enviar", el navegador revisa todo el <form>. 
+        Si detecta el atributo required y la caja no tiene texto, 
+        cancela la petición de envío internamente y hace saltar el típico globo de alerta ("Complete este campo").
+            Por otro lado, el aria-required="true" le da aviso al lector de pantalla al poner este atributo, 
+            le inyectamos la propiedad de "obligatorio. Cuando el software de voz se apoya sobre el campo, 
+            lee la información y la traduce en audio diciéndole a la persona: "Campo obligatorio".] -->
+
+</body>
+</html>

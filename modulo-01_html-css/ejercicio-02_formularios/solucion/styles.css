@@ -1,0 +1,80 @@
+/* TP-CHECK: 1.2 | STECCANELLA-JULIAN | un label explícito con for es importante porque: 
+En el caso de una persona no vidente que usa el lector de pantalla, 
+al usar la tecla Tab el cursor se coloca en el input; 
+y gracias a que existe un label con un 'for' vinculado a ese input,
+ el lector sabe cómo se llama esa caja y se lo lee al usuario. 
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* Quitamos el margen por defecto del párrafo y le damos el nuestro */
+.bloque-campo {
+  margin: 0 0 20px 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.etiqueta-en-linea {
+  display: inline;
+  font-weight: normal;
+}
+
+.asterisco {
+  color: red;
+}
+
+/* Estados normales */
+input, textarea, select {
+  padding: 8px;
+  border: 2px solid gray;
+}
+
+/* Estados visuales */
+input:hover, textarea:hover, select:hover {
+  border-color: black;
+}
+
+button:disabled {
+  background-color: lightgray;
+  color: gray;
+  cursor: not-allowed;
+}
+
+input:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 3px solid blue;
+  outline-offset: 2px;
+  border-color: blue;
+}
+
+/* Validaciones HTML5 con CSS */
+input:valid, textarea:valid {
+  border-color: green;
+}
+
+input:invalid, textarea:invalid {
+  border-color: red;
+}
+
+input:disabled, textarea:disabled, select:disabled {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+/* Mensajes de error */
+.error-message {
+  display: none; 
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+input:invalid ~ .error-message {
+  display: block;
+}
