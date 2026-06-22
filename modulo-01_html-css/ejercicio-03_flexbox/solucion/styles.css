@@ -1,0 +1,182 @@
+/* TP-CHECK: 1.3 | Steccanella-Julian | flex-wrap hace: 
+Flex-wrap es una propiedad que permite que los elementos se ajusten segun sea neceseario: 
+Con "flex-wrap: nowrap" los elementos estaran en una sola línea, 
+con "flex-wrap: wrap" se ajustarán a varias lineas de arriba a abajo y
+con "flex-wrap: wrap-reverse" se ajustarán a varias lineas de abajo a arriba */
+
+
+:root {
+    --color-primario: #333;  
+    --color-fondo: #f0f0f0;   
+    --color-texto: #555;     
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    color: var(--color-texto);
+}
+/* Cabecera y botones activos */
+.cabecera, .btn-filtro.activo {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+/* Botones inactivos y etiquetas */
+.btn-filtro, .tag {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+
+p {
+    color: var(--color-texto);
+}
+
+/* 1. CABECERA (El contenedor principal) */
+.cabecera {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 5px 20px;
+  background-color: var(--color-primario);
+  position: sticky; 
+  top: 0;          
+  z-index: 1000;
+}
+
+/*  LISTA (El contenedor de los enlaces) */
+
+.lista-enlaces {
+  display: flex;     
+  gap: 20px;       
+  list-style: none; 
+  margin: 0;        
+  padding: 0;   
+  
+}
+
+
+.lista-enlaces a {
+  color: white;
+  text-decoration: none; 
+}
+
+
+.contenedor-filtros {
+    display: flex;             
+    justify-content: center; 
+    gap: 15px;                 
+    margin: 40px 0;           
+    flex-wrap: wrap;           
+}
+
+/* ESTILOS DE LOS BOTONES */
+.btn-filtro {
+    padding: 8px 20px;
+    background-color: var(--color-fondo); 
+    color: var(--color-primario);             
+
+}
+
+
+.btn-filtro:hover {
+    background-color: var(--color-primario); 
+    color: white; 
+}
+.btn-filtro.activo {
+    background-color: var(--color-primario);    
+    color: white;              
+    font-weight: bold;         
+}
+
+.btn-filtro:focus-visible {
+    outline: 3px solid #333; 
+    outline-offset: 2px;     
+}
+
+
+
+/*  LISTA DE TAGS  */
+.tarjeta-tags {
+    display: flex;
+    gap: 8px; 
+    flex-wrap: wrap;  
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+/*  CADA ITEM DE LA LISTA (li)  */
+.tag {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 20px; 
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/*  CONTENEDOR DE LA GALERÍA  */
+.galeria-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+/*  TARJETA  */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc((100% - 40px) / 3);
+    
+   
+    padding-bottom: 20px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* IMÁGENES */
+.tarjeta-img {
+    width: 100%;
+    display: block; 
+}
+
+/* Ajustes de márgenes internos para los textos y componentes */
+.tarjeta h3, .tarjeta p, .tarjeta-tags {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tarjeta h3 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.tarjeta p {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tarjeta:hover {
+
+    transform: translateY(-8px); 
+  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*  BOTÓN "VER MÁS"  */
+.btn-ver-mas {
+   
+    margin-top: auto; 
+    
+    margin-left: 20px;
+    align-self: flex-start; 
+    
+    color: #333;
+    text-decoration: underline; 
+    font-weight: bold;
+    font-size: 0.9rem;
+}
