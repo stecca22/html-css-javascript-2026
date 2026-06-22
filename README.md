@@ -7,9 +7,9 @@
 
 | Campo | Dato |
 |-------|------|
-| **Nombre y Apellido** | |
-| **Legajo** | |
-| **Correo electrónico** | |
+| **Nombre y Apellido** |Julian Steccanella|
+| **Legajo** |31953|
+| **Correo electrónico** |juliansteccanella@gmail.com|
 
 ---
 
